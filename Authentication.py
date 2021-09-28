@@ -13,8 +13,8 @@ def register_user():
     file.write("\n")
     file.close()
 
-    print("Username : ", username_info)
-    print("Password : ", password_info)
+    #print("Username : ", username_info)
+    #print("Password : ", password_info)
 
     count= count+1
     if(count ==1):
@@ -62,7 +62,7 @@ def register():
     Label(screen1, text = "", bg="#2d2e30").pack()
     Button(screen1, text="Register", width="15", height="1", bg="#008502", font=5, command= register_user).pack()
 
-    exitbutton = Button(screen1, text="Exit", bg="#ff0000", width="15", height="1", font=5, command=screen1.destroy())
+    exitbutton = Button(screen1, text="Exit", bg="#ff0000", width="15", height="1", font=5, command=screen1.destroy)
     exitbutton.pack()
 
 
@@ -97,9 +97,9 @@ def login_success():
     x = (screen_width/2) -(width/2)
     y = (screen_height/2) - (height/2)
     screen3.geometry(f'{width}x{height}+{int(x)}+{int(y)}')
-    
-    Label(screen3, text="Login Success").pack()
-    Button(screen3, text="OK", command=delete1).pack()
+
+    Label(screen3, text="Login Success", bg="black", fg="white").pack()
+    Button(screen3, text="OK", bg="gold3", command=delete1).pack()
 
 
 
@@ -119,7 +119,7 @@ def password_not_found():
     y = (screen_height/2) - (height/2)
     screen4.geometry(f'{width}x{height}+{int(x)}+{int(y)}')
     
-    Label(screen4, text="Incorrect Password ").pack()
+    Label(screen4, text="Incorrect Password ", bg="black", fg="white").pack()
     Button(screen4, text="OK", bg="#d60909", height=1, command=delete2).pack()
 
 
@@ -141,7 +141,7 @@ def user_not_found():
     screen5.geometry(f'{width}x{height}+{int(x)}+{int(y)}')
 
     screen5.title("Not Found")
-    Label(screen5, text="Not Found").pack()
+    Label(screen5, text="Not Found", bg="black", fg="white").pack()
     Button(screen5, text="OK", bg="#d60909", command=delete3).pack()
 
 
@@ -158,7 +158,7 @@ def login_user():
     for line in file:
         file_info = line.rstrip("\n")
         list_of_file_info = file_info.split("\t")
-        print(list_of_file_info)
+        #print(list_of_file_info)
         if (username_login_info == list_of_file_info[0]):
             if (password_login_info == list_of_file_info[2]):
                 counter= counter + 1
